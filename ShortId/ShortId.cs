@@ -20,16 +20,12 @@ namespace ShortId
             }
 
             string hashHex;
-
             using (var sha1 = new SHA1Managed())
             {
-                hashHex = Convert.ToBase64String(sha1.ComputeHash(Encoding.UTF8.GetBytes(hostname)));
+                hashHex = BitConverter.ToString(sha1.ComputeHash(Encoding.UTF8.GetBytes(hostname)));
             }
 
-            var data = Convert.FromBase64String(hashHex);
-            ServerHash = BitConverter.ToString(data).Replace("-", string.Empty);
-            if (ServerHash.Length > 2)
-                ServerHash = ServerHash.Substring(0, 2);
+            ServerHash = hashHex.Substring(0, 2);
         }
 
         public static string New()
