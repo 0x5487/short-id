@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,12 +16,15 @@ namespace ShortId
 
             Console.WriteLine(id);
 
-            //HashSet<string> keys = new HashSet<string>();
-            //for (int i = 0; i < 10000000; i++)
-            //{
-            //    keys.Add(ShortId.New());
-            //}
-
+            Stopwatch time = new Stopwatch();
+            time.Start();
+            HashSet<string> keys = new HashSet<string>();
+            for (int i = 0; i < 1000000000; i++)
+            {
+                keys.Add(ShortId.New());
+            }
+            time.Stop();
+            Console.WriteLine(time.Elapsed);
 
             Console.WriteLine("done");
             Console.Read();

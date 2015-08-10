@@ -31,11 +31,11 @@ namespace ShortId
         public static string New()
         {
             //get hash code
-            string hashCode = Guid.NewGuid().ToString().GetHashCode().ToString("x");
+            string hashCode = Guid.NewGuid().ToString().GetHashCode().ToString("x").ToUpper();
 
             if (hashCode.Length < 8)
             {
-                hashCode = hashCode.PadLeft(8, 'z');
+                hashCode = hashCode.PadLeft(8, 'Z');
             }
 
             string tempId = DateTime.UtcNow.ToString("yy") + hashCode + ServerHash;
