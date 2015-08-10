@@ -1,16 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace ShortId
 {
-    public static class ShortId
+    public class ShortId
     {
-        public static string New()
+        private static readonly string ServerHash;
+
+        static ShortId()
         {
             //get server hash
             string hostname = Dns.GetHostName();
@@ -18,7 +18,7 @@ namespace ShortId
             {
                 hostname = Environment.MachineName;
             }
-            
+
             string hashHex;
 
             using (var sha1 = new SHA1Managed())
@@ -27,10 +27,13 @@ namespace ShortId
             }
 
             var data = Convert.FromBase64String(hashHex);
-            string serverHash = BitConverter.ToString(data).Replace("-", string.Empty);
-            if (serverHash.Length > 2)
-                serverHash = serverHash.Substring(0, 2);
+            ServerHash = BitConverter.ToString(data).Replace("-", string.Empty);
+            if (ServerHash.Length > 2)
+                ServerHash = ServerHash.Substring(0, 2);
+        }
 
+        public static string New()
+        {
             //get hash code
             string hashCode = Guid.NewGuid().ToString().GetHashCode().ToString("x");
 
@@ -39,7 +42,7 @@ namespace ShortId
                 hashCode = hashCode.PadLeft(8, 'z');
             }
 
-            string tempId = DateTime.UtcNow.ToString("yy") + hashCode + serverHash;
+            string tempId = DateTime.UtcNow.ToString("yy") + hashCode + ServerHash;
 
             StringBuilder id = new StringBuilder();
             id.Append(tempId.Substring(0, 4));

@@ -16,7 +16,7 @@ namespace ShortId
             Console.WriteLine(id);
 
             //HashSet<string> keys = new HashSet<string>();
-            //for (int i = 0; i < 1000000000; i++)
+            //for (int i = 0; i < 10; i++)
             //{
             //    keys.Add(ShortId.New());
             //}
