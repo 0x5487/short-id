@@ -4,7 +4,7 @@ using System.Security.Cryptography;
 using System.Text;
 
 
-namespace ShortId
+namespace JasonSoft
 {
     public class ShortId
     {

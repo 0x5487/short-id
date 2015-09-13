@@ -9,7 +9,7 @@ namespace ShortId_Dnx
     {
         public void Main(string[] args)
         {
-            var id = ShortId.ShortId.New();
+            var id = JasonSoft.ShortId.New();
             
             Console.WriteLine(id);
             Console.WriteLine("done");

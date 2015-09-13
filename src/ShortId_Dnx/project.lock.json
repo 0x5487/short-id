@@ -1064,7 +1064,7 @@
     "System.Net.NameResolution/4.0.0-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "U7EQKsf6rcyt57RDcfb95NKM9tALB9CRoztyfGVMv/O3dYTKeBSja8pBiFU9PDke1wRC/HC+CFuivl3Eg/F5FQ==",
+      "sha512": "vURClTnozBxuob1+PjevDYQIcl6s2/kuAWD39ntPK6OQvTjhFP5ey8DMWRJP/agN/3TXaowyXBn32XY66O4eiA==",
       "files": [
         "lib/DNXCore50/System.Net.NameResolution.dll",
         "lib/MonoAndroid10/_._",
@@ -1118,7 +1118,7 @@
     "System.Private.Networking/4.0.1-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "oVSynIrR3mIU0b/goscsaZDywr3RLxQijQnaFRKfl/VB3F9rKi5mdr0vHcGVWuq5ALSrG0OLwM8PRA4tM5e3rQ==",
+      "sha512": "PcMdwhnkodbZmOj2RGGH/I5LvsIIdC+GJHORHnvdRFLUZNqIJE/0mEfA2BhWj5wiEbp8TlLyj/vEX6CXE8IKPQ==",
       "files": [
         "lib/DNXCore50/System.Private.Networking.dll",
         "lib/netcore50/System.Private.Networking.dll",
@@ -1442,7 +1442,7 @@
     "System.Security.Cryptography.Algorithms/4.0.0-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "GjeU8uLxWigoEEtfD2aBtPLmskJNnanmUwNSNKdHHzIuGr69hwmSsaVA1IDJSQ1dX5WQY32v1O1MROCfEq/Seg==",
+      "sha512": "BvUX0qHC9DKP6kjhS6EvHFKSXiiTxPlNvni44x+QAKWsBPWZQLUJVNyiORdRZEqg1zKKV4UI3fo0WTgBIHAPhw==",
       "files": [
         "lib/DNXCore50/System.Security.Cryptography.Algorithms.dll",
         "lib/MonoAndroid10/_._",
@@ -1464,7 +1464,7 @@
     "System.Security.Cryptography.Primitives/4.0.0-beta-23225": {
       "type": "package",
       "serviceable": true,
-      "sha512": "acOPCfkrkOFr/NAnA+hIOnY8yQZr94JzJ02heQDIqE0sFKyBITLbgQBoO+gTBVRxGr1o+oiYbFnXY0Q30+SACg==",
+      "sha512": "+d/qgU+N70qzg5oE5x/7NC4Y6LPwGVFbcQRl4MggXJrjWtO/dbybLTpMr3hj07nl17Fj7GxGjpwRZaIGnpux/w==",
       "files": [
         "lib/DNXCore50/System.Security.Cryptography.Primitives.dll",
         "lib/MonoAndroid10/_._",
