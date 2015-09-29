@@ -13,20 +13,22 @@ namespace JasonSoft
         {
 
             var id = ShortId.New();
-
-            //Console.WriteLine(id);
-
-            //Stopwatch time = new Stopwatch();
-            //time.Start();
-            //HashSet<string> keys = new HashSet<string>();
-            //for (int i = 0; i < 1000000000; i++)
-            //{
-            //    keys.Add(ShortId.New());
-            //}
-            //time.Stop();
-            //Console.WriteLine(time.Elapsed);
             Console.WriteLine(id);
+
+            Stopwatch time = new Stopwatch();
+            time.Start();
+            HashSet<string> keys = new HashSet<string>();
+            for (int i = 0; i < 20000000; i++)
+            {
+                if (!keys.Add(ShortId.New()))
+                    throw new Exception("duplicate");
+
+
+            }
+            time.Stop();
+            Console.WriteLine(time.Elapsed);
             Console.WriteLine("done");
+
             Console.Read();
 
         }

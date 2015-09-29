@@ -6,13 +6,15 @@ using System.Text;
 
 namespace JasonSoft
 {
+    //reference: http://weblog.west-wind.com/posts/2006/Mar/09/Creating-a-unique-or-semiunique-ID-in-NET
+
     public class ShortId
     {
         private static readonly string ServerHash;
 
         static ShortId()
         {
-            //get server hash
+            //get machine hash
             string hostname = Dns.GetHostName();
 
             string hashHex;
@@ -27,17 +29,29 @@ namespace JasonSoft
         public static string New()
         {
             //get hash code
-            string hashCode = Guid.NewGuid().GetHashCode().ToString("x");
+            int maxSize = 10;
+            char[] chars = new char[36];
+            string all = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"; //abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890
+            chars = all.ToCharArray();
 
-            if (hashCode.Length < 8)
+            RNGCryptoServiceProvider crypto = new RNGCryptoServiceProvider();
+            var data = new byte[maxSize];
+            crypto.GetNonZeroBytes(data);
+            StringBuilder result = new StringBuilder(maxSize);
+            foreach (byte b in data)
             {
-                hashCode = hashCode.PadLeft(8, 'Z');
+                int pick = b % chars.Length - 1;
+                result.Append(chars[pick]);
             }
+            var hashCode = result.ToString();
 
-            string id = DateTime.UtcNow.ToString("yy") + hashCode + ServerHash;
+            //string id = DateTime.UtcNow.ToString("yy") + hashCode + ServerHash;
+            string id = hashCode + ServerHash;
 
-            return id.ToUpper();
+            return id;
         }
+
+
 
     }
 }
