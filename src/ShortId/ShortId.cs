@@ -40,7 +40,7 @@ namespace JasonSoft
             StringBuilder result = new StringBuilder(maxSize);
             foreach (byte b in data)
             {
-                int pick = b % chars.Length - 1;
+                int pick = b % (chars.Length - 1);
                 result.Append(chars[pick]);
             }
             var hashCode = result.ToString();
