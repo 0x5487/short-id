@@ -18,7 +18,7 @@ namespace JasonSoft
             Stopwatch time = new Stopwatch();
             time.Start();
             HashSet<string> keys = new HashSet<string>();
-            for (int i = 0; i < 20000000; i++)
+            for (int i = 0; i < 10000000; i++)
             {
                 if (!keys.Add(ShortId.New()))
                     throw new Exception("duplicate");

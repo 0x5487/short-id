@@ -29,9 +29,9 @@ namespace JasonSoft
         public static string New()
         {
             //get hash code
-            int maxSize = 10;
-            char[] chars = new char[36];
-            string all = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"; //abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890
+            int maxSize = 8;
+            char[] chars = new char[62];
+            string all = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"; 
             chars = all.ToCharArray();
 
             RNGCryptoServiceProvider crypto = new RNGCryptoServiceProvider();
@@ -46,9 +46,9 @@ namespace JasonSoft
             var hashCode = result.ToString();
 
             //string id = DateTime.UtcNow.ToString("yy") + hashCode + ServerHash;
-            string id = hashCode + ServerHash;
+            //string id = hashCode + ServerHash;
 
-            return id;
+            return hashCode;
         }
 
 
